@@ -1,0 +1,12 @@
+{% extends 'myapp/base.html' %}
+{% block body_block %}
+
+    <form action="{% url 'myapp:register'%}" method="post">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <br><input type="submit" value="Submit" style="margin-left: 150px ; padding: 10px ; color: #2b5ad9 ; font-weight: bold">
+    </form>
+
+{% endblock %}

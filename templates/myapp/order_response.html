@@ -1,0 +1,13 @@
+{% extends 'myapp/base.html' %}
+{% block body_block %}
+
+            <h1>Order Confirmation </h1>
+{#    <h1>  Hello {{ order.Student }}!!</h1>#}
+            <h2>Ordered Courses:</h2>
+            <ol>
+                {% for c in courses %}
+                    <li> {{ c.title }} </li>
+                {% endfor %}
+            </ol>
+
+{% endblock %}

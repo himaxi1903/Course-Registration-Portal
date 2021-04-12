@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>E-Learning WebApp!</title>
+</head>
+<body>
+    {% if top_list %}
+        <h2>List of Topics</h2>
+        <ol>
+            {% for top in top_list %}
+{#            <li> {{ top.name}} </li>#}
+                <li><a href="{% url 'myapp:topic_detail' top.id %}"> {{ top.name }} </a></li>
+                <p></p>
+            {% endfor %}
+        </ol>
+    {% else %}
+        <strong>There are no available topics!</strong>
+    {% endif %}
+    <!--<p><a href="about">About Page</a></p>-->
+    <a href="{% url 'myapp:about' %}">About Page</a>
+    <br>
+{#    <h1> Last Login at: <b> {{ last_login }}</b></h1>#}
+</body>
+</html>

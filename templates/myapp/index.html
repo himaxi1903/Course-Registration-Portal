@@ -1,0 +1,37 @@
+{% extends 'myapp/base.html' %}
+{% block body_block %}
+    {% if top_list %}
+{#       <h1> Hello User !!!</h1>#}
+
+
+
+        <h2>List of Topics</h2>
+        <ol>
+            {% for top in top_list %}
+{#            <li> {{ top.name}} </li>#}
+                <li><a href="{% url 'myapp:topic_detail' top.id %}"> {{ top.name }} </a></li>
+                <p></p>
+            {% endfor %}
+        </ol>
+    {% else %}
+
+        <li><a href="{% url 'myapp:index' %}"> </a></li>
+        <strong>There are no available topics!</strong>
+    {% endif %}
+    <!--<p><a href="about">About Page</a></p>-->
+    <!--<a href="{% url 'myapp:about' %}">About Page</a>-->
+{#    <h2> <a href="{% url 'myapp:place_order' %}">Place Order</a></h2>#}
+    </br>
+{% if request.user.is_authenticated %} <h2> Last Login at: <b> {{ request.session.last_login }}</b></h2>
+
+                    {% else %}
+                {% endif %}
+
+
+
+    <style type="text/css">
+        #indexLink{
+        visibility: hidden;
+        }
+    </style>
+{% endblock %}

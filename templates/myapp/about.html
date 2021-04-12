@@ -1,0 +1,20 @@
+{% extends 'myapp/base.html' %}
+{% block title %}
+    APP About Page
+{% endblock %}
+
+
+{% block body_block %}
+    <p>'e-Learning APP'</p>
+     <p>'This is an E-learning Website! Search our Topics to find all available Courses.'</p>
+    <br>
+    <p>Total Visits of About Page is:<b> {{ total_visits }}</b></p>
+    <!--<p><a href="">Index Page</a></p>
+    <a href="{% url 'myapp:index' %}">Index Page</a>-->
+
+    <style type="text/css">
+        #aboutLink{
+        visibility: hidden;
+        }
+    </style>
+{% endblock %}

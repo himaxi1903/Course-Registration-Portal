@@ -1,0 +1,14 @@
+{% extends 'myapp/base.html' %}
+{% block body_block %}
+{#<h1> <p> Hello {{ name }} !!</p> </h1>#}
+         {% if course_list %}
+            <h2>List of available Courses</h2>
+            <ol>
+                {% for course in course_list %}
+                    <li>{{ course.topic.name }} : {{ course.title }} </li>
+                {% endfor %}
+            </ol>
+         {% else %}
+             <h2>There are no available courses for this price</h2>
+        {% endif %}
+{% endblock %}

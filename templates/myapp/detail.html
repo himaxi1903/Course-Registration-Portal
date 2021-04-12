@@ -1,0 +1,25 @@
+{% extends 'myapp/base.html' %}
+
+{% block body_block %}
+{#    <p>Name of the Topic: {{ topic_name }}</p>#}
+{#    <p>Category of the Topic: {{ topic_category }}#}
+    <p>{{  topic.name | upper }}</p>
+    <p>Length: {{ topic.length }} </p>
+    <br>
+
+        <h2>List of Courses</h2>
+        <ol>
+            {% for course in course_list %}
+            <li> {{ course.title}} </li>
+                <p></p>
+            {% endfor %}
+        </ol>
+
+    <!--<p><a href="about">About Page</a></p>
+    <a href="{% url 'myapp:index' %}">Index Page</a>-->
+    <style type="text/css">
+        #aboutLink{
+        visibility: hidden;
+        }
+    </style>
+{% endblock %}
